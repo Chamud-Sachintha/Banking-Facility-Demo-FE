@@ -1,0 +1,56 @@
+<div class="container mt-5">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="bankId">
+      <th mat-header-cell *matHeaderCellDef> Bank ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.bankId}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="bankName">
+      <th mat-header-cell *matHeaderCellDef> Bank Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.bankName}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="incooperateDate">
+      <th mat-header-cell *matHeaderCellDef> Incoroperate Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.incooperateDate}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="noOfStaff">
+      <th mat-header-cell *matHeaderCellDef> No.Of Staff </th>
+      <td mat-cell *matCellDef="let element"> {{element.noOfStaff}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="noOfBranches">
+      <th mat-header-cell *matHeaderCellDef> No.Of Branches </th>
+      <td mat-cell *matCellDef="let element"> {{element.noOfBranches}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bankStatus">
+      <th mat-header-cell *matHeaderCellDef> Bank Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.bankStatus}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions" class="text-center">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Actions </th>
+      <td mat-cell *matCellDef="let element" class="text-center">
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+          <span class="fa fa-trash-o fa-lg j" style="color: white; background-color: darkred; padding: 10px; border-radius: 50%;" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+          <span class="fa fa-refresh fa-lg" style="color: white; background-color: burlywood; padding: 10px; border-radius: 50%;" aria-hidden="true"></span>
+        </button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

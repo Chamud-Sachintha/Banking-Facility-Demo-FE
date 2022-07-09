@@ -8,10 +8,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { BankingDetailsComponent } from './banking-details/banking-details.component';
+import { BankingServiceService } from './services/banking-service.service';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BankingDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -20,8 +26,10 @@ import { MatTableModule } from '@angular/material/table';
     NgbModule,
     MatToolbarModule,
     MatTableModule,
+    HttpClientModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [BankingServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
