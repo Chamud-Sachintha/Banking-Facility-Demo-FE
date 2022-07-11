@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { BankingDetailsComponent } from './banking-details/banking-details.component';
 import { BankingServiceService } from './services/banking-service.service';
 
@@ -27,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatTableModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [BankingServiceService],
   bootstrap: [AppComponent]
