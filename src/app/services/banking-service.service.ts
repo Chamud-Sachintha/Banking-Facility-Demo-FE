@@ -12,18 +12,11 @@ export class BankingServiceService {
   constructor(private http: HttpClient) { }
 
   getAllBanks(){
-
-    return this.http.get(`${environment.baseURI}`).pipe(map((result: any) => {
-      const bankingDetails: BankingDetails[] = [];
-
-      for(const key in result){
-        if(result.hasOwnProperty(key)){
-          bankingDetails.push({...result[key]});
-        }
-      }
-      
-      return bankingDetails;
-    }));
-
+    return this.http.get<BankingDetails[]>(`${environment.baseURI}`);
   }
+
+  saveBankDetails(newBankDetail: BankingDetails){
+    return this.http.post(`${environment.baseURI}`, newBankDetail);
+  }
+
 }

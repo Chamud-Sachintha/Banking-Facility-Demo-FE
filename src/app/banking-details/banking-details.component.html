@@ -1,56 +1,58 @@
 <div class="container mt-5">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <div class="example-container mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
   
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="bankId">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> Bank ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.bankId}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="bankName">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> Bank Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.bankName}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="incooperateDate">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> Incoroperate Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.incooperateDate}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="noOfStaff">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> No.Of Staff </th>
+        <td mat-cell *matCellDef="let element"> {{element.noOfStaff}} </td>
+      </ng-container>
   
-    <!-- Position Column -->
-    <ng-container matColumnDef="bankId">
-      <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> Bank ID </th>
-      <td mat-cell *matCellDef="let element"> {{element.bankId}} </td>
-    </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="noOfBranches">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> No.Of Branches </th>
+        <td mat-cell *matCellDef="let element"> {{element.noOfBranches}} </td>
+      </ng-container>
   
-    <!-- Name Column -->
-    <ng-container matColumnDef="bankName">
-      <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> Bank Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.bankName}} </td>
-    </ng-container>
+      <ng-container matColumnDef="bankStatus">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> Bank Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.bankStatus}} </td>
+      </ng-container>
   
-    <!-- Weight Column -->
-    <ng-container matColumnDef="incooperateDate">
-      <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> Incoroperate Date </th>
-      <td mat-cell *matCellDef="let element"> {{element.incooperateDate}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="noOfStaff">
-      <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> No.Of Staff </th>
-      <td mat-cell *matCellDef="let element"> {{element.noOfStaff}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="noOfBranches">
-      <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> No.Of Branches </th>
-      <td mat-cell *matCellDef="let element"> {{element.noOfBranches}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="bankStatus">
-      <th mat-header-cell *matHeaderCellDef style="font-weight: bold;"> Bank Status </th>
-      <td mat-cell *matCellDef="let element"> {{element.bankStatus}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="actions" class="text-center">
-      <th mat-header-cell *matHeaderCellDef class="text-center" style="font-weight: bold;"> Actions </th>
-      <td mat-cell *matCellDef="let element" class="text-center">
-        <button mat-icon-button>
-          <mat-icon style="color: forestgreen;">update</mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon style="color: blueviolet;">delete</mat-icon>
-        </button>
-      </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+      <ng-container matColumnDef="actions" class="text-center">
+        <th mat-header-cell *matHeaderCellDef class="text-center" style="font-weight: bold;"> Actions </th>
+        <td mat-cell *matCellDef="let element" class="text-center">
+          <button mat-icon-button>
+            <mat-icon style="color: forestgreen;">update</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon style="color: blueviolet;">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
 </div>
